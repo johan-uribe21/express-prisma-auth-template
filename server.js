@@ -13,9 +13,7 @@ import passport from "./config/authConfig";
 import * as authUtils from "./controllers/auth/authUtilities";
 
 // routers
-import gigRouter from "./controllers/gig/gig.routes";
 import userRouter from "./controllers/user/user.routes";
-import postRouter from "./controllers/post/post.routes";
 
 const app = express();
 
@@ -43,9 +41,7 @@ app.get(
   authUtils.jwtSuccessfulLogin
 );
 
-app.use("/gigs", authUtils.verifyAuthenticated, gigRouter);
 app.use("/user", authUtils.verifyAuthenticated, userRouter);
-app.use("/post", authUtils.verifyAuthenticated, postRouter);
 
 // fallback
 app.use(function (req, res, next) {
