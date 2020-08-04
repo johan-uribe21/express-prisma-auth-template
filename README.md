@@ -1,0 +1,1 @@
+A basic template for node-express rest api servers using prisma as the ORM, with a built-in user model and authenticaiton flow using google oauth2.0
